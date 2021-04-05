@@ -1,0 +1,56 @@
+{
+  "openapi":"3.0.2",
+  "info": {
+    "title":"Timeclock API",
+    "version":"0.1"
+  },
+  "servers": [
+    {"url":"https://api.server.test/v1"}
+  ],
+  "paths": {
+    "/timecard": {
+      "get": {
+        "description": "Retrieves metadata about a week's timecard",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "parameters": [
+          {
+            "name": "week",
+            "in": "path",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The week which contains the timecard"
+          }
+        ]
+            }
+    },
+    "/task": {
+      "get": {
+        "description": "Task(s) available to charge time to",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/entry": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+
+  }
+}

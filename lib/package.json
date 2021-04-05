@@ -1,0 +1,19 @@
+{
+  "name": "timecard_lib",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "author": "Scott Evers",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "jmespath": "^0.15.0"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^8.3.2"
+  }
+}
