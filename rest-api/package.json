@@ -1,0 +1,17 @@
+{
+  "name": "timesheet-api",
+  "version": "1.0.0",
+  "description": "API for managing timesheets",
+  "main": "app.js",
+  "repository": "https://github.com/Scott-Evers/timeclock_api/tree/main/api/timeclock-api/timesheet-api",
+  "author": "Scott Evers",
+  "scripts": {
+    "test": "mocha tests/unit/",
+    "build": "zip -r dist/deploy.zip app.js package.json node_modules/timecard_lib"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.2.1",
+    "timecard_lib": "file:../lib/src"
+  }
+}

@@ -8,11 +8,14 @@
   },
   "author": "Scott Evers",
   "license": "ISC",
-  "type": "module",
   "dependencies": {
     "jmespath": "^0.15.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.13.14",
+    "@babel/core": "^7.13.14",
+    "@babel/polyfill": "7.12.1",
+    "@babel/preset-env": "^7.13.12",
     "chai": "^4.3.4",
     "mocha": "^8.3.2"
   }
