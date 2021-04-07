@@ -1,8 +1,7 @@
 {
   "ServiceNow": {
     "apiHost": "involtadev.service-now.com",
-    "key": "timecard_apiuser",
-    "secret": "bd54c5357a&"
+    "secret": "dGltZWNhcmRfYXBpdXNlcjpiZDU0YzUzNTdhJg=="
   },
   "TimeClockApi": {
     "apiHost": "9a3qvx1p3i.execute-api.us-east-1.amazonaws.com",
