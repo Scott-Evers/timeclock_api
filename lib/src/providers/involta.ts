@@ -1,8 +1,6 @@
-const {fetch, getWeekStart} = require('../util');
-const creds = require('./creds.json');
-const TimeSheet = require('../TimeSheet');
-const Entry = require('../Entry');
-const Entries = require('../Entries');
+import {fetch} from '../util';
+import creds from './creds';
+import {TimeSheet} from '../Types';
 
 exports.namespace = 'TimeClockApi';
 
@@ -13,9 +11,8 @@ const globalOptions = {
   }
 };
 
-exports.getTimeSheet = async function(date, email) {
+export async function getTimeSheet(date: Date, email: string): Promise<TimeSheet> {
   let ts = (await fetch(`https://${creds[module.exports.namespace].apiHost}/${creds[module.exports.namespace].stage}/ts?date=${date}&user=${email}`, globalOptions)).data;
-  console.log(ts);
   return ts;
 }
 

@@ -1,6 +1,5 @@
-const {expect} = require('chai');
-const {fetch,getWeekStart} = require('../src/util');
-const CONFIG = require('../src/config.json');
+import {fetch,getWeekStart} from '../src/util';
+import CONFIG from '../src/config';
 
 describe('Utilities',() => {
   describe('Fetch', () => {
@@ -9,7 +8,7 @@ describe('Utilities',() => {
         let d = new Date();
         d.setDate(new Date().getDate() + i);
         let e = getWeekStart(d)
-        expect(e.getDay()).to.equal(CONFIG.weekStartsOn);
+        expect(e.getDay()).toBe(CONFIG.weekStartsOn);
       }
     });
     it('Fetches Google home page', async () => {
@@ -17,7 +16,7 @@ describe('Utilities',() => {
         method: 'GET'
       });
       
-      expect(r.status).lessThan(400);
+      expect(r.status).toBeLessThan(400);
     });
   });
 });

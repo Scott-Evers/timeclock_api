@@ -3,17 +3,32 @@
   "version": "0.1.3",
   "description": "",
   "scripts": {
-    "test": "mocha --reporter spec"
+    "build": "rollup -c",
+    "test": "jest"
   },
   "author": "Scott Evers",
   "license": "ISC",
-  "module": "./es6_entry.mjs",
+  "main": "build/index.js",
+  "module": "build/index.es.js",
+  "jsnext:main": "build/index.es.js",
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node"
+  },
   "dependencies": {
     "axios": "^0.21.1",
     "jmespath": "^0.15.0"
   },
   "devDependencies": {
-    "chai": "^4.3.4",
-    "mocha": "^8.3.2"
+    "@rollup/plugin-commonjs": "^18.0.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^11.2.1",
+    "@types/jest": "^26.0.22",
+    "jest": "^26.6.3",
+    "rollup": "^2.45.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "ts-jest": "^26.5.4",
+    "typescript": "^4.2.4"
   }
 }
