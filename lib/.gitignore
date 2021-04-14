@@ -129,4 +129,9 @@ $RECYCLE.BIN/
 # End of https://www.gitignore.io/api/osx,node,linux,windows
 
 creds.json
+creds.js
+creds.js.map
+creds.ts
+creds.es.js
+creds.es.js.map
 dist/

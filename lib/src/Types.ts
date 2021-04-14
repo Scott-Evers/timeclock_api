@@ -31,3 +31,10 @@ export interface User {
   Login: string;
   Email: string;
 }
+
+export interface Task {
+  Uuid: string;
+  Id: string;
+  Name: string;
+  RequiresComment: boolean;
+}

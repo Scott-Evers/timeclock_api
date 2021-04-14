@@ -6,12 +6,11 @@
   "repository": "https://github.com/Scott-Evers/timeclock_api/tree/main/api/timeclock-api/timesheet-api",
   "author": "Scott Evers",
   "scripts": {
-    "test": "mocha tests/unit/",
-    "build": "zip -r dist/deploy.zip app.js package.json node_modules/timecard_lib"
+    "test": "jest",
+    "build": "zip -r build/deploy.zip app.js package.json node_modules/@involta -x node_modules/@involta/time_lib/node_modules\\* && aws --profile involta-sandbox lambda update-function-code --function-name test-tc --zip-file fileb://build/deploy.zip"
   },
   "devDependencies": {
-    "chai": "^4.2.0",
-    "mocha": "^8.2.1",
-    "timecard_lib": "file:../lib/src"
+    "jest": "^26.6.3",
+    "@involta/time_lib": "file:../lib"
   }
 }

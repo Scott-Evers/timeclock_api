@@ -1,11 +1,12 @@
 import * as Types from './Types';
 import Week from './Week';
+import Task from './Task';
 import {getWeekStart} from './util';
 
 class Entry {
       EntryId: string;
       ReadOnly: boolean;
-      Task: string;
+      Task: Types.Task;
       Total: number;
       Week: Types.Week;
       Comment: string;
@@ -13,14 +14,14 @@ class Entry {
 
       constructor (id?: string, 
             readOnly?: boolean, 
-            taskId?: string, 
+            task?: Types.Task, 
             weekContains?: Date, 
             total?: number, 
             comment?: string, 
             week?: Types.Week) {
             this.EntryId = id ? id : '';
             this.ReadOnly = readOnly ? readOnly : false;
-            this.Task = taskId ? taskId : ""; //TODO: create task class that looks up the taks info from the ID.  change type of property to class
+            this.Task = task ? task : new Task();
             this.Total = total ? total : 0;
             this.Week = week ? week : new Week();
             this.Comment = comment ? comment : '';

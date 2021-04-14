@@ -11,6 +11,7 @@ describe('ServiceNow Provider',() => {
   describe('Timesheet', () => {
     it('Get a timesheet from SNow', async () => {
       let ts = await getTimeSheet(new Date(2019,9,9),'severs@involta.com');
+      //console.log('ts:',JSON.stringify(ts,null,2));
       expect(ts.Total).toBe(44);
       expect(ts.Week.Monday).toBe(10);
       expect(ts.Week.Tuesday).toBe(10);

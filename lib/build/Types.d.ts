@@ -1,5 +1,5 @@
 export interface Provider {
-    getTimeSheet(week: Date, email: string): TimeSheet;
+    getTimeSheet(week: Date, email: string): Promise<TimeSheet>;
 }
 export interface Entries {
 }
@@ -25,4 +25,10 @@ export interface User {
     Uuid: string;
     Login: string;
     Email: string;
+}
+export interface Task {
+    Uuid: string;
+    Id: string;
+    Name: string;
+    RequiresComment: boolean;
 }

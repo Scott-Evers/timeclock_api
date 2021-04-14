@@ -1,6 +1,8 @@
-console.log('function code');
-const TimeSheet = require('timecard_lib/TimeSheet.cjs');
-const provider = require('timecard_lib/providers/snow.cjs');
+const time_lib = require('@involta/time_lib');
+const TimeSheet = time_lib.TimeSheet;
+const provider = time_lib.Providers.ServiceNow;
+console.log('provider:',provider);
+
 //import TimeSheet from 'timecard_lib/TimeSheet';
 
 /**
@@ -17,8 +19,6 @@ const provider = require('timecard_lib/providers/snow.cjs');
  */
 exports.lambdaHandler = async (event, context) => {
     try {
-        console.log('TimeSheet:',TimeSheet);
-        
         let ts = new TimeSheet();
         await ts.refreshFromSource(new Date(2020,9,9),'severs@involta.com',provider);
         return ts;

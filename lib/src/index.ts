@@ -5,13 +5,23 @@ import TimeSheet from './TimeSheet';
 import * as Types from './Types';
 import * as Utils from './util';
 import Week from './Week';
+import * as ServiceNow from './providers/snow';
+import * as Involta from './providers/involta';
 
-export default {
-  Config: config,
-  Entries: Entries,
-  Entry: Entry,
-  TimeSheet: TimeSheet,
-  Types: Types,
-  Utils: Utils,
-  Week: Week,
+const Providers = {
+  ServiceNow,
+  Involta,
 }
+export {
+  config,
+  Entries,
+  Entry,
+  TimeSheet,
+  Types,
+  Utils,
+  Week,
+  Providers,
+}
+//  Providers: {
+//    ServiceNow: SNow,
+//    Involta: Involta,
